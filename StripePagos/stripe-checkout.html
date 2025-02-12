@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Checkout de Stripe</title>
+        <style>
+            html {
+                box-sizing: border-box;
+                font-family: 'Arial', sans-serif;
+                font-size: 16px;
+                background-color: #f9f9f9;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                margin: 0;
+                padding: 20px;
+                background-color: #ffffff;
+                color: #333;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                color: #444;
+                margin-bottom: 2rem;
+            }
+
+            .productos {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .producto {
+                background-color: #fff;
+                border: 1px solid #e0e0e0;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                max-width: 300px;
+                width: 100%;
+            }
+
+            .producto:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .producto img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .producto figcaption {
+                padding: 15px;
+                text-align: center;
+                font-size: 1.1rem;
+                color: #555;
+                background-color: #fafafa;
+            }
+        </style>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Checkout de Stripe</h1>
+        <section id="productos" class="productos"></section>
+        <template id="productos-template">
+            <figure class="producto">
+                <img>
+                <figcaption></figcaption>
+            </figure>
+        </template>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="assets/stripe-checkout.js" type="module"></script>
+    </body>
+</html>
